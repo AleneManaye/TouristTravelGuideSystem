@@ -19,6 +19,7 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
+            android:textAlignment="center"
             android:padding="10dp"
             android:text="@string/login"
             android:textColor="@color/white_greyish"
@@ -52,7 +53,7 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:background="@android:color/transparent"
-            android:drawableLeft="@android:drawable/ic_lock_lock"
+            android:drawableLeft="@android:drawable/ic_lock_idle_lock"
             android:drawablePadding="8dp"
             android:gravity="center_vertical"
             android:hint="@string/passowrd"
@@ -60,7 +61,6 @@
             android:padding="10dp"
             android:singleLine="true"
             android:textColor="@color/white"
-            android:drawableTint="@color/colorBlack"
             android:textColorHint="@color/white"
             android:textSize="16sp" />
 
