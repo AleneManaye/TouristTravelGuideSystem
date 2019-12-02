@@ -22,4 +22,5 @@
         <item name="android:background">?android:attr/listDivider</item>
         <item name="android:layout_marginTop">10dp</item>
     </style>
+
 </resources>
