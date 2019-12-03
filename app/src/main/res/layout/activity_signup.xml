@@ -7,8 +7,13 @@
     android:orientation="vertical"
     android:background="@color/background_color"
     android:padding="20dp"
-    tools:context=".signupActivity">
+    tools:context=".SignUp_Fragment">
 
+    <ImageView
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/logo" />
 
     <TextView
         android:layout_width="fill_parent"
@@ -24,7 +29,6 @@
         android:id="@+id/fullName"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
         android:background="@android:color/transparent"
         android:drawableLeft="@drawable/ic_profile_icon"
         android:drawablePadding="8dp"
@@ -44,10 +48,11 @@
         android:background="@color/white_greyish" />
 
     <EditText
-        android:id="@+id/userEmailId"
+        android:id="@+id/email"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
+        android:drawableTint="@color/colorWhite"
         android:background="@android:color/transparent"
         android:drawableLeft="@android:drawable/sym_action_email"
         android:drawablePadding="8dp"
@@ -66,10 +71,11 @@
         android:background="@color/white_greyish" />
 
     <EditText
-        android:id="@+id/mobileNumber"
+        android:id="@+id/phone"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
+        android:drawableTint="@color/colorWhite"
         android:background="@android:color/transparent"
         android:drawableLeft="@android:drawable/stat_sys_phone_call"
         android:drawablePadding="8dp"
@@ -88,32 +94,11 @@
         android:background="@color/white_greyish" />
 
     <EditText
-        android:id="@+id/location"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:background="@android:color/transparent"
-        android:drawableLeft="@android:drawable/ic_menu_mylocation"
-        android:drawablePadding="8dp"
-        android:gravity="center_vertical"
-        android:hint="@string/location"
-        android:inputType="textCapWords"
-        android:padding="10dp"
-        android:singleLine="true"
-        android:textColor="@color/white"
-        android:textColorHint="@color/white"
-        android:textSize="16sp" />
-
-    <View
-        android:layout_width="fill_parent"
-        android:layout_height="1px"
-        android:background="@color/white_greyish" />
-
-    <EditText
         android:id="@+id/password"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
+        android:drawableTint="@color/colorWhite"
         android:background="@android:color/transparent"
         android:drawableLeft="@android:drawable/ic_lock_idle_lock"
         android:drawablePadding="8dp"
@@ -132,10 +117,11 @@
         android:background="@color/white_greyish" />
 
     <EditText
-        android:id="@+id/confirmPassword"
+        android:id="@+id/cPassword"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
+        android:drawableTint="@color/colorWhite"
         android:background="@android:color/transparent"
         android:drawableLeft="@android:drawable/ic_lock_idle_lock"
         android:drawablePadding="8dp"
@@ -149,7 +135,7 @@
         android:textSize="16sp" />
 
     <CheckBox
-        android:id="@+id/terms_conditions"
+        android:id="@+id/termsCheck"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="7dp"
@@ -158,7 +144,7 @@
         android:textSize="14sp" />
 
     <Button
-        android:id="@+id/signUpBtn"
+        android:id="@+id/btnSignUp"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
@@ -174,9 +160,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="5dp"
         android:gravity="center"
-        android:padding="10dp"
+       android:layout_marginTop="5dp"
         android:text="@string/already_user"
         android:textColor="@color/white_greyish"
         android:textSize="15sp" />

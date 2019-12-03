@@ -85,7 +85,7 @@ public class SignUp_Fragment extends AppCompatActivity {
             Toast.makeText(this, "Please enter email", Toast.LENGTH_SHORT).show();
             return;
         }
-        if (phone.equals("") || phone.length()<5 ){
+        if (phone.length()<5 ){
             phone.requestFocus();
             Toast.makeText(this, "Please enter valid phone", Toast.LENGTH_SHORT).show();
             return;

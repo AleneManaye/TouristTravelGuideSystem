@@ -3,11 +3,14 @@ package com.biwash.touristguidesystem;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.text.InputType;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
@@ -30,6 +33,10 @@ public class Login_Fragment extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            Window w = getWindow();
+            w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
+        }
         login_email=findViewById(R.id.login_email);
         login_password=findViewById(R.id.login_password);
         btnLogin=findViewById(R.id.btnLogin);
@@ -46,7 +53,7 @@ public class Login_Fragment extends AppCompatActivity {
                     show_hide_password.setText(R.string.hide_pwd);// change
                     login_password.setInputType(InputType.TYPE_CLASS_TEXT);
                     login_password.setTransformationMethod(HideReturnsTransformationMethod
-                            .getInstance());// show password
+                            .getInstance());// show passwords
                 }
                 else {
                     show_hide_password.setText(R.string.show_pwd);// change
@@ -62,6 +69,26 @@ public class Login_Fragment extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 validateLogin();
+            }
+        });
+
+        singUp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(Login_Fragment.this,SignUp_Fragment.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK |Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        forgotPassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(Login_Fragment.this,ForgotPassword_Fragment.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK |Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
+                finish();
             }
         });
     }
@@ -92,8 +119,13 @@ public class Login_Fragment extends AppCompatActivity {
         }
 
         if (getEmailId.equals("admin@gmail.com") && getPassword.equals("admin")){
-            Intent intent = new Intent (this, DashboardActivity.class);
+         //   Intent intent = new Intent (this, DashboardActivity.class);
+           // startActivity(intent);
+
+            Intent intent = new Intent(this, DashboardActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK |Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(intent);
+            finish();
         }
         else {
             Toast.makeText(this, "Invalid Credentials", Toast.LENGTH_SHORT).show();

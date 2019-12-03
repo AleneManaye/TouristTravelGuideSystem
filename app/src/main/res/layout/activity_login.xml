@@ -6,6 +6,8 @@
     android:layout_height="fill_parent"
     android:background="@color/background_color"
     android:padding="20dp"
+    android:layout_alignParentBottom="true"
+    android:fitsSystemWindows="true"
     >
 
     <LinearLayout
@@ -14,6 +16,11 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:orientation="vertical" >
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/logo"/>
 
         <TextView
             android:layout_width="fill_parent"
@@ -27,7 +34,7 @@
             android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/login_emailid"
+            android:id="@+id/login_email"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
@@ -76,8 +83,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:checked="false"
                 android:text="@string/show_pwd"
                 android:textColor="@color/white"
+                android:textColorHighlight="#00F8F5F5"
+                android:textColorLink="#00F8F8F8"
+                android:textCursorDrawable="@android:drawable/editbox_dropdown_light_frame"
                 android:textSize="14sp" />
 
             <TextView
@@ -93,7 +104,7 @@
         </LinearLayout>
 
         <Button
-            android:id="@+id/loginBtn"
+            android:id="@+id/btnLogin"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="3dp"
@@ -106,7 +117,7 @@
     </LinearLayout>
 
     <TextView
-        android:id="@+id/createAccount"
+        android:id="@+id/singUp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/login_layout"
